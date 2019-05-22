@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    .modal-footer{
+      background-color: #2a2c30;
+      margin-bottom: -1px;
+    }
+    .modal-header{
+      background-color: #2a2c30;
+      color: #fff;
+      padding-top: 5px;
+      height: 60px;
+    }
+    .modal-body img{
+      width: 30vw;
+    }
+    .modal-body{
+      padding: 8px;
+      padding-top: 0;
+    }
+    .modal-dialog{
+      /*border: 1px solid red;
+*/      width: 70%;
+    }
+    .close_btn{
+        float: right;
+        position: relative;
+        top: -30px;
+        right: -50px;    
+    }
+    .disclaimer{
+     /* border: 1px solid red;*/
+      position: absolute;
+      top: 21px;
+      right: 1%;
+    }
+    #show_details{
+      display: none;
+    }
+    tr{
+      border-bottom: 1px solid gray;
+    }
+
+    tbody{
+      display: table;
+    }
+
+    /* Media Quaries */
+
+  @media only screen and (max-width: 1024px) {
+    /*table, tr, th, td{
+      display: block;
+      }*/
+      .modal-dialog{
+        width: 80%;
+      }
+}
+@media only screen and (max-width: 768px) {
+    /*table, tr, th, td{
+      display: block;
+      }*/
+      .modal-dialog{
+        width: 90%;
+      }
+}
+@media only screen and (max-width: 734px) {
+    table, tr, th, td{
+      display: block;
+      }
+      #hide_details{
+        display: none;
+      }
+      #show_details{
+        display: contents;
+
+      }
+      .modal-dialog{
+        margin-left: 4%;
+      }
+      td{
+        
+      }
+      tbody{
+        width: 100%;
+      }
+      tbody img{
+        border: 1px solid red;
+      }
+}
+
+
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <a class="close_btn btn btn-md" data-dismiss="modal"><img src="close-btn.png"></a>
+          <h4 class="modal-title" style="padding-top: 12px;">Available Plans For This Plot</h4>
+          <p class="disclaimer"><b>Disclaimer :</b> Pricing for models does not include homesite.</p>
+        </div>
+        <div class="modal-body">
+        
+          <table class="table">
+            <tbody>
+            <tr id="hide_details">
+              <th>Elevations</th>
+              <th>Plan name</th>
+              <th>Starts At</th>
+              <th>Specification</th>
+              <th>More Details</th>
+            </tr>
+
+            <tr>
+              <td><img src="Joshua-Elevation.jpg"></td>
+              <th id="show_details">Plan Name</th><td>Joshua</td>
+              <th id="show_details">Starts At</th><td>$227,750</td>
+              <th id="show_details">Specifications</th><td>3 Bedrooms<br>
+                  2 Baths<br>
+                  2 Car Garage<br>
+                  1,355 Finished Sq. Ft.<br>
+                  1,909 Total Sq. Ft.</td>
+              <th id="show_details">More Details</th><td><a class="btn btn-info btn-md" href="">View More Details</a></td>
+            </tr>
+            <tr>
+              <td><img src="Anna-Elevation.jpg"></td>
+              <th id="show_details">Plan Name</th> <td>Anna</td>
+              <th id="show_details">Starts At</th> <td>$251,500</td>
+              <th id="show_details">Specifications</th> <td>3 Bedrooms (with an option up to 5)<br>
+                  2 Baths<br>
+                  2 Car Garage<br>
+                  1,417 Finished Sq. Ft.<br>
+                  2,077 Total Sq. Ft.<br>
+                  Home type: Tri Level</td>
+              <th id="show_details">More Details</th> <td><a class="btn btn-info btn-md" href="">View More Details</a></td>
+            </tr>
+            <tr>
+              <td><img src="Aspen-Elevation.jpg"></td>
+              <th id="show_details">Plan Name</th> <td>Aspen</td>
+              <th id="show_details">Starts At</th> <td>$258,000</td>
+              <th id="show_details">Specifications</th> <td>3 Bedrooms (with an option for 4)<br>
+                      2 Baths<br>
+                      2 Car Garage + Bonus Room<br>
+                      1,741 Finished Sq. Ft.<br>
+                      2,304 Total Sq. Ft.<br>
+                      Home type: 2 Story</td>
+              <th id="show_details">More Details</th> <td><a class="btn btn-info btn-md" href="">View More Details</a></td>
+            </tr>
+            <tr>
+              <td><img src="Tara-Elevation.jpg"></td>
+              <th id="show_details">Plan Name</th> <td>Tara</td>
+              <th id="show_details">Starts At</th> <td>$253,750</td>
+              <th id="show_details">Specifications</th> <td>3 Bedrooms + Office<br>
+                          2 Baths<br>
+                          2 Car Garage + Bonus Room<br>
+                          1,769 Finished Sq. Ft.<br>
+                          2,396 Total Sq. Ft.<br>
+                          Home type: Ranch</td>
+              <th id="show_details">More Details</th> <td><a class="btn btn-info btn-md" href="">View More Details</a></td>
+            </tr>
+            <tr>
+              <td><img src="Ridgeline-Elevation.jpg"></td>
+              <th id="show_details">Plan Name</th> <td>Ridgeline</td>
+              <th id="show_details">Starts At</th> <td>$280,000</td>
+              <th id="show_details">Specifications</th> <td>4 Bedrooms + Office<br>
+                            2 Baths<br>
+                            2 Car Garage<br>
+                            2,065 Finished Sq. Ft.<br>
+                            2,833 Total Sq. Ft.<br>
+                            Home type: Ranch</td>
+              <th id="show_details">More Details</th> <td><a class="btn btn-info btn-md" href="">View More Details</a></td>
+            </tr>
+            <tr>
+              <td><img src="Gracie-Elevation.jpg"></td>
+              <th id="show_details">Plan Name</th> <td>Gracie</td>
+              <th id="show_details">Starts At</th> <td>$224,000</td>
+              <th id="show_details">Specifications</th> <td>4 Bedrooms<br>
+                        2 Baths<br>
+                        2 Car Garage<br>
+                        1,298 Finished Sq. Ft.<br>
+                        1,818 Total Sq. Ft.<br>
+                        Home type: Ranch</td>
+              <th id="show_details">More Details</th> <td><a class="btn btn-info btn-md" href="">View More Details</a></td>
+            </tr>
+            </tbody>
+          </table>
+              </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-md">View More Button</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
